@@ -1,6 +1,6 @@
 # what-to-eat
 
-selenium + bs4 메뉴 크롤링 완료 <br>
+selenium + bs4 메뉴 크롤링 완료 (다이닝코드 음식 정보) <br>
 뼈대 디자인 + 랜덤메뉴 추출 완료 
 
 ### todo
