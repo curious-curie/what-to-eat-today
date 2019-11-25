@@ -5,20 +5,22 @@ const request = require('request');
 var cors = require('cors')
 const router = express.Router();
 
+const id = process.env['CLIENT_ID'];
+const secret = process.env['CLIENT_SECRET'];
 router.use(cors());
 
-router.get('/', (req, res) => res.json({data:'this is index.'}));
+router.get('/', (req, res) => res.json({data: "index"}));
 
 router.get('/search/', (req, res) =>
 {
-        console.log(req.query)
+        console.log(process.env.CLIENT_ID)
         // let searchWord = encodeURIComponent(req.query.query);
         let searchWord = req.query.query;
         let places
         let url = 'https://openapi.naver.com/v1/search/local?sort=comment&query=' + encodeURI(req.query.query);
         let headers =  {
-        'X-Naver-Client-Id':'TLSmE3Saibvfac9WIqZd',
-        'X-Naver-Client-Secret': 'rPPCt9ih13',
+        'X-Naver-Client-Id': id,
+        'X-Naver-Client-Secret': secret,
         "Access-Control-Allow-Origin": "*",
         };
 
