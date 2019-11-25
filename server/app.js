@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const app = express();
 const PORT = process.env.PORT
 const api = require('./routes/index');
+const path = require('path')
 
 app.use(bodyParser.json());
 app.use('/api', api);
