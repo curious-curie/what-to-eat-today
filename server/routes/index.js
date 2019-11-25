@@ -4,16 +4,15 @@ const express = require('express');
 const request = require('request');
 var cors = require('cors')
 const router = express.Router();
-
+require('dotenv').config();
 const id = process.env['CLIENT_ID'];
 const secret = process.env['CLIENT_SECRET'];
 router.use(cors());
 
-router.get('/', (req, res) => res.json({data: "index"}));
+router.get('/', (req, res) => res.json({data: id}));
 
 router.get('/search/', (req, res) =>
 {
-        console.log(process.env.CLIENT_ID)
         // let searchWord = encodeURIComponent(req.query.query);
         let searchWord = req.query.query;
         let places
