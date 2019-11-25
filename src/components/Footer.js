@@ -2,6 +2,8 @@ import React from 'react';
 import './Footer.css'
 const Footer = () => ( 
 <div className="footer"> 
-© Curie Yoo (curious.curieyoo@gmail.com)  </div> )
+<div>By. Curie Yoo (curious.curieyoo@gmail.com) </div>
+API powered by Naver 
+ </div> )
 
 export default Footer;
