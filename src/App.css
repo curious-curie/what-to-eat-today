@@ -64,6 +64,9 @@ body {
   outline: none;
 }
 
+.list-wrapper {
+  min-height: 500px;
+}
 .list-title {
   font-family: 'Jua', sans-serif;
   font-size: 30px;

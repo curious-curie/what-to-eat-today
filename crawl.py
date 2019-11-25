@@ -53,8 +53,8 @@ menu_list = []
 
 # menu_list.extend(crawl_start('직장인'))
 # menu_list.extend(crawl_start('안주'))
-query = ['서울', '부산', '밥집', '한식', '중식', '양식', '일식', '고기', '회식', '점심', '직장인', '안주']
-
+# query = ['서울', '부산', '밥집', '한식', '중식', '양식', '일식', '고기', '회식', '점심', '직장인', '안주']
+query = ['인기', '점심']
 for word in query:
     menu_list.extend(crawl_start(word))
 

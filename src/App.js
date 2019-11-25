@@ -6,6 +6,7 @@ import { searchPlaces } from './actions'
 import {SearchAlt} from 'styled-icons/boxicons-regular/SearchAlt';
 import { Place } from 'styled-icons/material/Place';
 import Loader from './components/Loader'
+import Footer from './components/Footer'
 import ReactTooltip from 'react-tooltip'
 
 var data = require('./data.json');
@@ -16,7 +17,7 @@ class App extends Component {
     super(props);
     this.state = {
       item: '',
-      color: 'red',
+      color: '',
       addr: "서울",
     }
     this.input = React.createRef();
@@ -86,7 +87,7 @@ class App extends Component {
     {this.state.item !== '' &&
     <>
 
-    <div>
+    <div className = "list-wrapper">
       
     <div className = "list-title">{this.state.addr} {this.state.item} 맛집 </div>
       <input className = "addr-input" type = "text" placeholder = "장소 바꿔서 검색 ex) 강남, 부산" ref= {this.input} onKeyUp = {this.handleEnter}></input> <span onClick = {this.handleAddrChange}><SearchAlt size="30px"/></span>
@@ -108,7 +109,7 @@ class App extends Component {
          
     </div>
     </>}
-
+        <Footer/>
     </div>
     )
   }

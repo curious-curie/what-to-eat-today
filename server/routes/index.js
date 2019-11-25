@@ -8,16 +8,14 @@ const router = express.Router();
 router.use(cors());
 
 router.get('/', (req, res) => res.json({data:'this is index.'}));
-router.get('/wow/', (req, res) => {
-    console.log("wow")
-})
+
 router.get('/search/', (req, res) =>
 {
         console.log(req.query)
         // let searchWord = encodeURIComponent(req.query.query);
         let searchWord = req.query.query;
         let places
-        let url = 'https://openapi.naver.com/v1/search/local?query=' + encodeURI(req.query.query);
+        let url = 'https://openapi.naver.com/v1/search/local?sort=comment&query=' + encodeURI(req.query.query);
         let headers =  {
         'X-Naver-Client-Id':'TLSmE3Saibvfac9WIqZd',
         'X-Naver-Client-Secret': 'rPPCt9ih13',
