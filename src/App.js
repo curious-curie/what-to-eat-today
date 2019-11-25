@@ -1,23 +1,14 @@
 
 import React, { Component } from 'react'
 import './App.css';
-import Search from './Search'
-import Select from 'react-select';
 import { connect } from 'react-redux'
 import { searchPlaces } from './actions'
 import {SearchAlt} from 'styled-icons/boxicons-regular/SearchAlt';
+import { Place } from 'styled-icons/material/Place';
+import Loader from './components/Loader'
+import ReactTooltip from 'react-tooltip'
 
 var data = require('./data.json');
-
-const Addr = [
-  { label: "전체", value: ""},
-  { label: "강남구", value: "강남구" },
-  { label: "강동구", value: "강동구" },
-  { label: "관악구", value: "관악구" },
-  
-  { label: "동작구", value: "동작구" },
-  { label: "서초구", value: "서초구" },
-]
 
 class App extends Component {
 
@@ -96,16 +87,25 @@ class App extends Component {
     <>
 
     <div>
-      <h2>{this.state.addr} {this.state.item} 맛집 </h2>
-      <input type = "text" placeholder = "장소 바꿔서 검색" ref= {this.input} onKeyUp = {this.handleEnter}></input> <span onClick = {this.handleAddrChange}><SearchAlt size="30px"/></span>
-        { this.props.places.length === 0 && <div> 맛집 정보가 없어요 :( </div>}
-        {this.props.places.map((place) => {
-          console.log(place)
-          let title = place.title.replace('<b>', '').replace('</b>', "").replace('&amp;', '');
-         return (<div onClick = {() => 
-            window.open('https://map.naver.com/v5/search/'+ title)
-         }>{title} {place.address}</div>) 
+      
+    <div className = "list-title">{this.state.addr} {this.state.item} 맛집 </div>
+      <input className = "addr-input" type = "text" placeholder = "장소 바꿔서 검색 ex) 강남, 부산" ref= {this.input} onKeyUp = {this.handleEnter}></input> <span onClick = {this.handleAddrChange}><SearchAlt size="30px"/></span>
+        { this.props.isLoading && <Loader/>}
+        { !this.props.isLoading && this.props.places.length === 0 && <div className="error"> 맛집 정보가 없어요 :( </div>}
+        { !this.props.isLoading && this.props.places.map((place) => {
+  
+        let title = place.title.replace(/[<b></b>&amp;]/g, '');
+        let address = place.address.replace(/[<b></b>&amp;]/g, '');
+        
+         return (<div className = "place">
+            <div className = "place-title">{title} 
+            <Place data-tip="지도 보기" onClick = {() => 
+            window.open('https://map.naver.com/v5/search/'+ title + " " + address)
+         }className = "place-icon" size="24px"/> </div> 
+            <span className = "place-address">{address} </span>
+            <ReactTooltip place="right" effect="solid"/></div>) 
         }) }
+         
     </div>
     </>}
 

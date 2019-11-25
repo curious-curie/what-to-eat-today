@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Jua&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Gothic:700&display=swap');
 
 @media(max-width: 400px){
   .main-title {
@@ -50,4 +51,51 @@ body {
 }
 .food-button:hover {
   opacity: 1;
+}
+
+.addr-input {
+  border: none;
+  height: 20px;
+  border-radius: 20px;
+  padding: 4px;
+  padding-left: 20px;
+  font-size: 12px;
+  width: 200px;
+  outline: none;
+}
+
+.list-title {
+  font-family: 'Jua', sans-serif;
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.place {
+  margin: 20px;
+
+}
+.place-title {
+  font-size: 25px;
+  margin-right: 10px;
+  font-family: 'Do Hyeon', sans-serif;
+/* font-family: 'Nanum Gothic', sans-serif; */
+}
+
+.place-address {
+  font-size: 14px;
+}
+
+.place-icon{
+  color: rgb(82, 150, 201);
+  margin-bottom: 4px;
+  opacity: 0.7;
+}
+
+.place-icon:hover {
+  opacity: 1;
+}
+
+.error {
+  margin: 30px;
 }
