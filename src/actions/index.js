@@ -15,11 +15,7 @@ export const searchPlacesSuccess = (places) => {
 }
 export const searchPlaces = (searchWord) => {
     console.log(searchWord)
-    let url = `https://cors-anywhere.herokuapp.com/openapi.naver.com/v1/search/local?query=${searchWord}`;
-    let headers =  {
-        'X-Naver-Client-Id':'TLSmE3Saibvfac9WIqZd',
-        'X-Naver-Client-Secret': 'rPPCt9ih13',
-    };
+  
 
     return (dispatch) => {
         dispatch(searchPlacesStart());
