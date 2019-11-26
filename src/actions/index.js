@@ -29,7 +29,7 @@ export const searchPlaces = (searchWord) => {
         //    console.log("TEST")
         // })
         // .catch(err => console.log(err))
-        axios.get(`http://localhost:5000/api/search?query=${searchWord}`, {
+        axios.get(`/api/search?query=${searchWord}`, {
             headers: {"Access-Control-Allow-Origin": "*",}
         })
         .then(res => {console.log(res.data.items)
