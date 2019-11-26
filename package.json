@@ -1,5 +1,5 @@
 {
-  "name": "what-to-eat",
+  "name": "server",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,10 +10,11 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.20.0",
+    "npm-run-all": "^4.1.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0",
-    "npm-run-all": "^4.1.5"
+    "redux": "^4.0.4"
   },
   "engines": {
     "node": "10.16.3",
@@ -45,8 +46,20 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1",
+    "babel-register": "^6.26.0",
+    "nodemon": "^2.0.1",
     "npm-run-all": "^4.1.5"
   },
-  "homepage": "https://curious-curie.github.io/what-to-eat-today"
+  "homepage": "https://curious-curie.github.io/what-to-eat-today",
+  "description": "selenium + bs4 메뉴 크롤링 완료 (다이닝코드 음식 정보) <br> 뼈대 디자인 + 랜덤메뉴 추출 완료 <br> 장소마크 클릭시 네이버 지도 이동 <br> ver1.0) <br> <br> ![what-to-eat](https://user-images.githubusercontent.com/47528556/69515957-94d7c800-0f93-11ea-94d0-87c36c277afb.gif)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/curious-curie/what-to-eat-today.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/curious-curie/what-to-eat-today/issues"
+  }
 }
