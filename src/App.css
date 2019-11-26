@@ -4,8 +4,10 @@
 @media(max-width: 400px){
   .main-title {
     font-size: 45px !important;
+    margin: 30px !important;
   }
 }
+
 body {
   height: 1000px;
   text-align: center;
