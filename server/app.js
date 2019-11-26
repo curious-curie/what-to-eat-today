@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use('/api', api);
 
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+app.listen(port, '0.0.0.0', () => console.log(`Listening on port ${port}...`));
 
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, '../build')))
