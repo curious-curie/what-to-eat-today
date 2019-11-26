@@ -10,7 +10,7 @@ const id = process.env['CLIENT_ID'];
 const secret = process.env['CLIENT_SECRET'];
 router.use(cors());
 
-router.get('/', (req, res) => res.json({data: id}));
+router.get('/', (req, res) => res.json({data: "index"}));
 
 router.get('/search/', (req, res) =>
 {
