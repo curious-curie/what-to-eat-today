@@ -106,3 +106,18 @@ body {
 .error {
   margin: 30px;
 }
+
+.history-block{
+  opacity: 0.7;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 80%;
+  display: block;
+}
+
+.history-title {
+  color: rgb(202, 86, 86);
+  font-family: 'Jua', sans-serif;
+  font-size: 20px;
+  margin-right: 10px;
+}

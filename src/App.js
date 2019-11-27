@@ -8,6 +8,7 @@ import { Place } from 'styled-icons/material/Place';
 import Loader from './components/Loader'
 import Footer from './components/Footer'
 import ReactTooltip from 'react-tooltip'
+import History from './components/History'
 
 var data = require('./data.json');
 
@@ -18,7 +19,8 @@ class App extends Component {
     this.state = {
       item: '',
       color: '',
-      addr: "서울",
+      addr: "서울특별시",
+      histories: [],
     }
     this.input = React.createRef();
   }
@@ -26,8 +28,15 @@ class App extends Component {
  
   getItem() {
     let item = data[Math.floor(Math.random()*data.length)];
+    const histories = this.state.histories;
+    const slices = histories.slice(1)
+    const prev = this.state.item;
     this.changeColor();
-    this.setState({ item: item })
+    console.log(histories.length)
+    this.setState({ 
+      item: item,
+      histories: 
+      (histories.length < 6)? [...histories, prev] : [...slices, prev]})
     let searchWord = this.state.addr + item;
     this.props.dispatch(searchPlaces(searchWord))
   }
@@ -61,6 +70,21 @@ class App extends Component {
     this.input.current.value = ''
   }
 
+  handleHistoryClick = (item) => {
+    console.log(item)
+
+    const histories = this.state.histories;
+    const slices = histories.slice(1)
+    const prev = this.state.item;
+    this.setState({ 
+      item: item,
+      histories: 
+      (histories.length < 5)? [...histories, prev] : [...slices, prev]
+    })
+    let searchWord = this.state.addr + item;
+    this.props.dispatch(searchPlaces(searchWord))
+  }
+
   render() {
     const styles = {
         backgroundColor: this.state.color,
@@ -84,6 +108,10 @@ class App extends Component {
     {this.state.item === '' ? <span>뭐 먹지?</span> :  <span>딴거!</span>}
     </button>
 
+    <div className = "history-block">
+      {this.state.histories.length > 1 && <div className= "history-title">History</div>}
+    {this.state.histories.filter(item => item !== "").map(item => <History item = {item} onClick = {() => this.handleHistoryClick(item)}/>)}
+    </div>
     {this.state.item !== '' &&
     <>
 
