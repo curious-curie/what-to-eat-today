@@ -1,11 +1,8 @@
-# what-to-eat
-### react + redux + node.js 
 
-
-ver1.0)
 
 # 오늘 뭐 먹지? 🍕
 ### 랜덤 메뉴 추천 + 검새 지역 기반 맛집 추천 
+### react + redux + node.js 
 
 <br>
 <br>
