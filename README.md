@@ -6,7 +6,9 @@
 
 <br>
 <br>
-![what-to-eat](https://user-images.githubusercontent.com/47528556/69515957-94d7c800-0f93-11ea-94d0-87c36c277afb.gif)
+
+![what-to-eat](https://user-images.githubusercontent.com/47528556/69695959-7e5f7700-1121-11ea-871e-e18b81f804dd.gif)
+
 
 <br>
 selenium + bs4 메뉴 크롤링 완료 (다이닝코드 음식 정보) <br>
