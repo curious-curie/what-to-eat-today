@@ -110,7 +110,8 @@ class App extends Component {
 
     <div className = "history-block">
       {this.state.histories.length > 1 && <div className= "history-title">History</div>}
-    {this.state.histories.filter(item => item !== "").map(item => <History item = {item} onClick = {() => this.handleHistoryClick(item)}/>)}
+    {this.state.histories.filter(item => item !== "").map((item, index)=>
+       <History item = {item} index={index} onClick = {() => this.handleHistoryClick(item)}/>)}
     </div>
     {this.state.item !== '' &&
     <>
